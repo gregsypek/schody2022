@@ -4,16 +4,21 @@
   justify-content: center;
   column-gap: 4.8rem;
   //10px is for figcaption
-  row-gap: calc(4.8rem + 20px);
+  // row-gap: calc(4.8rem + 20px);
+  row-gap: 4.8rem;
 
   figure {
-    min-width: 50rem;
+    min-width: 40rem;
+    max-width: 70rem;
     height: 40rem;
+    flex-grow: 1;
     transition: flex 0.5s ease-out;
+
     @media (max-width: 75em) {
       min-width: 70vw;
       height: 45rem;
     }
+
     @media (max-width: 44em) {
       min-width: 80vw;
       max-height: 55rem;
@@ -26,6 +31,7 @@
       aspect-ratio: 1/1;
     }
   }
+
   figcaption {
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
@@ -33,27 +39,34 @@
     margin-top: -2px;
   }
 }
+
 .single__image {
   // height: 20vw;
-  min-height: 15rem;
+  min-height: 26rem;
   max-height: 35rem;
-  max-width: 50rem;
-  min-width: 25rem;
+  max-width: 55rem;
+  min-width: 35rem;
+  flex: 1;
   // margin-bottom: 4.8rem;
 
   position: relative;
 
   &.color {
     background-color: $third-color;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &:hover p {
     position: absolute;
     color: $gray-color;
-    background-color: rgba($main-shade, 0.8);
-    top: 92%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // background-color: $main-shade;
+    // top: 92%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
   }
 
   img {
@@ -61,32 +74,48 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: 1/1;
+
     &.color {
-      transition: opacity 0.4s ease-in-out;
-      opacity: 0.4;
+      transition: transform 0.4s, opacity 1s;
+      // transition: opacity 3s ease-in-out;
+      opacity: 0.6;
+
       &:hover {
         opacity: 1;
       }
     }
   }
-  &:nth-of-type(3n + 1) {
-    flex: 1;
+
+  &:hover img {
+    transform: rotate(1.4deg);
   }
+
+  // &:nth-of-type(2n + 1) {
+  //   flex: 1.5;
+  // }
+  // @media (max-width: 59em) {
+  // 	&:nth-of-type(4n + 1) {
+  // 		flex: 1;
+  // 	}
+  // }
 
   a {
     background-color: $third-color;
   }
+
   p {
-    color: $main-color;
+    color: $dark-color;
+    background-color: $main-color;
     font-size: 2rem;
     text-align: center;
-    top: 50%;
+    bottom: -10%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
-    transition: all 0.4s ease-in-out;
+    transition: background 0.6s ease-in-out;
     padding: 2rem 3.2rem;
   }
+
   p,
   p.title {
     position: absolute;
