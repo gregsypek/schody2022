@@ -1,0 +1,64 @@
+/*
+--- TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+-0.75px
+
+--- WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* --------------------COLORS-------------------------- */
+
+body {
+  --main-shade:#fcfbf9;
+	--main-color: #dfd3c3;
+	--second-color: #67403d;
+	--third-color: #381c18;
+	--gray-color: #251f1f;
+	--dark-color: #180e0d;
+
+  /* --------------------FONT-------------------------- */
+
+  --font-family: font-family: 'Poppins', sans-serif;
+
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	/* 10px / 16px = 0.625 = 62.5% */
+	font-size: 62.5%;
+}
+
+body {
+	font-family: var(--font-family);
+	line-height: 1;
+	font-weight: 400;
+	color: var(--gray-color);
+  background-color: var(--main-shade);
+}
+

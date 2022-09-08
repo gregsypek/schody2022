@@ -1,0 +1,18 @@
+extends accountBase
+
+block form
+  h2.form__title Dodaj zdjęcie do kategorii
+  form.form.form__addPhoto
+    .form__group 
+      label.form__label(for='stairsSelect') Wybierz kategorię
+      select.form__input(id='categories' name="categories" required)
+        option(value="") Wybierz opcje
+          each item in stairs
+            option(value=`${item.slug}` data-id=`${item.id}`)= item.name
+    .form__group      
+      input.form__upload(type='file', accept='image/*', id='stairImages', name='images' multiple)
+      label(for='stairImages') Wybierz zdjęcia (max 5)
+    
+    
+    .form__group 
+      button.btn.account__btn.btn--set-photo(type='submit') Dodaj zdjęcia

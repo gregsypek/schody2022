@@ -1,0 +1,67 @@
+.no-flexbox-gap .quality.top {
+	margin-right: 4.8rem;
+	@media (max-width: 44em) {
+		margin-bottom: 6.4rem;
+	}
+}
+
+.no-flexbox-gap .footer {
+	margin-right: 4rem;
+	@media (max-width: 44em) {
+		margin-bottom: 4rem;
+	}
+}
+.no-flexbox-gap .footer__icons {
+	margin-right: 2rem;
+}
+
+.no-flexbox-gap .about__box {
+	margin-right: 9.6rem;
+	@media (max-width: 44em) {
+		margin-bottom: 9.6rem;
+	}
+}
+
+.no-flexbox-gap .stairs__description {
+	margin-right: 10vw;
+}
+
+.no-flexbox-gap .gallery {
+	margin-right: 4.8rem;
+	margin-bottom: 4.8rem;
+}
+
+.no-flexbox-gap .quality__cards {
+	margin-right: 4.8rem;
+	margin-bottom: 8rem;
+}
+
+.no-flexbox-gap .header .main-list li:not(:last-child) {
+	margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .section-hero .hero {
+	margin-right: 4.8rem;
+	@media (max-width: 44em) {
+		margin-bottom: 4.8rem;
+	}
+}
+.no-flexbox-gap .price__bottom {
+	margin-bottom: 9.6rem;
+}
+.no-flexbox-gap .how__card {
+	margin-bottom: 3.2rem;
+	margin-right: 3.2rem;
+}
+.no-flexbox-gap .how__card .icon {
+	margin-bottom: 6.4rem;
+}
+.no-flexbox-gap .quality .top,
+.no-flexbox-gap .contact .top,
+.no-flexbox-gap .price .top,
+.no-flexbox-gap .offer .top {
+	margin-right: 4.8rem;
+	@media (max-width: 44em) {
+		margin-bottom: 4.8rem;
+	}
+}

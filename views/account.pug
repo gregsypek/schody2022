@@ -1,0 +1,31 @@
+extends accountBase
+
+block form
+  h2.form__title Zmień swoje dane 
+  form.form.form-user-data
+    .form__group 
+      label.form__label(for='userName') Imię
+      input.form__input(id='userName' type='text' value=`${user.name}` required name='name')
+    .form__group 
+      label.form__label(for='userEmail') Email
+      input.form__input(id='userEmail' type='email' value=`${user.email}` required name='email')
+
+    .form__group 
+      button.btn.account__btn(type='submit') Zapisz ustawienia
+block form2 
+  .container--big.mt--bg   
+    h2.form__title Zmień hasło
+    form.form.form__password 
+          
+      .form__group 
+        label.form__label(for='password-current') Obecne hasło
+        input.form__input.form__input--password(id='password-current' type='password' placeholder='********' required minlength='8')
+      .form__group 
+        label.form__label(for='password') Nowe hasło
+        input.form__input.form__input--password(id='password' type='password' placeholder='********' required minlength='8')
+
+      .form__group 
+        label.form__label(for='password-confirm') Potwierdź hasło
+        input.form__input.form__input--password(id='password-confirm' type='password' placeholder='********' required minlength='8')
+      .form__group 
+        button.btn.account__btn.btn--save-password Zapisz hasło       

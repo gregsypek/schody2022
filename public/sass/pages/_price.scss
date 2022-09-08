@@ -1,0 +1,248 @@
+.price {
+  @include sectionHead($main-shade3);
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 9.6rem;
+  }
+  &__row {
+    position: relative;
+    display: grid;
+  }
+
+  &__row:nth-of-type(odd) {
+    grid-template-columns: 4fr 2fr 3fr;
+    @media (max-width: 44em) {
+      .col--2 {
+        justify-content: left;
+      }
+      .col--3 {
+        justify-content: flex-end;
+        padding-right: 4.8rem;
+        transform: translateY(-7rem);
+      }
+    }
+    @media (max-width: 34em) {
+      .col--3 {
+        transform: translateY(2rem);
+        padding-right: 1.6rem;
+      }
+    }
+
+    .col--1::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 33%;
+      background-color: $main-color;
+      @media (max-width: 44em) {
+        top: 3rem;
+        right: 0;
+        left: 55%;
+      }
+      @media (max-width: 34em) {
+        bottom: -4rem;
+        left: 40%;
+      }
+    }
+  }
+
+  &__row:nth-of-type(even) {
+    grid-template-columns: 3fr 2fr 4fr;
+    @media (max-width: 44em) {
+    }
+    .col--1 {
+      order: 3;
+      @media (max-width: 44em) {
+        order: 1;
+      }
+    }
+    .col--2 {
+      order: 2;
+      @media (max-width: 44em) {
+        justify-content: flex-end;
+      }
+    }
+    .col--3 {
+      order: 1;
+      @media (max-width: 44em) {
+        order: 3;
+        transform: translateY(-7rem);
+        justify-content: flex-start;
+        padding-left: 3.2rem;
+      }
+      @media (max-width: 34em) {
+        transform: translateY(2rem);
+        padding-left: 1.6rem;
+      }
+    }
+    .col--1::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      left: 33%;
+      background-color: $main-color;
+      @media (max-width: 44em) {
+        top: 3rem;
+        left: 0;
+        right: 55%;
+      }
+      @media (max-width: 34em) {
+        bottom: -4rem;
+        right: 40%;
+      }
+    }
+  }
+  &__row:nth-of-type(odd),
+  &__row:nth-of-type(even) {
+    @media (max-width: 44em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .col--1,
+  .col--2,
+  .col--3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__photo {
+    width: calc(100% - 5rem);
+    margin: 2rem 2rem 0 2rem;
+  }
+  &__title {
+    text-align: center;
+    padding: 1rem 0 1rem 2rem;
+    font-size: 1.6rem;
+    @media (max-width: 44em) {
+      text-align: left;
+    }
+
+    @media (max-width: 44em) {
+      padding: 1rem 2rem 0rem 2rem;
+    }
+  }
+  &__box {
+    @media (max-width: 44em) {
+      display: flex;
+      flex-direction: column;
+      p {
+        order: 1;
+      }
+      img {
+        order: 2;
+      }
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    height: 45%;
+    min-width: 18rem;
+    aspect-ratio: 1/1;
+    background-color: $main-shade;
+    border-radius: 10px;
+    padding: 2rem;
+    @media (max-width: 44em) {
+      margin-top: 4.8rem;
+      aspect-ratio: 2/1;
+    }
+
+    &-heading {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    &-value {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+    sub,
+    sup {
+      font-size: 1.2rem;
+    }
+  }
+  &__list {
+    font-size: 1.6rem;
+    line-height: 140%;
+    header {
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    ul {
+      padding-left: 3rem;
+    }
+    li {
+      font-weight: 400;
+    }
+  }
+  &__list:not(:last-of-type) {
+    margin-bottom: 4.8rem;
+  }
+}
+
+//SECTION HOW
+
+.how {
+  margin-top: 9.6rem;
+  margin-bottom: 9.6rem;
+  position: relative;
+  span {
+    display: block;
+    color: $main-shade3;
+  }
+  .bg--center {
+    position: absolute;
+    z-index: -1;
+    top: 9.6rem;
+    bottom: 0;
+    left: 30vw;
+    right: 30vw;
+    background-color: $main-color;
+    @media (max-width: 34em) {
+      left: 38vw;
+      right: 38vw;
+    }
+  }
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+  }
+  &__card {
+    font-size: 1.8rem;
+    border: 1px solid $second-color;
+    background-color: $main-shade;
+    display: flex;
+    gap: 6.4rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3.2rem 2.4rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    .icon {
+      fill: $main-shade3;
+      font-weight: 600;
+    }
+    p {
+      text-align: center;
+      inline-size: 100px;
+      overflow-wrap: break-word;
+    }
+  }
+}

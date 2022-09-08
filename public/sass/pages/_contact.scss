@@ -1,0 +1,59 @@
+.contact {
+	@include sectionHead($second-color);
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 2rem;
+
+		@media (max-width: 44em) {
+			&:last-of-type {
+				// flex: 1;
+
+				.contact__tab {
+					flex-grow: 1;
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	&__tab {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		background-color: $second-color;
+		flex-basis: 30rem;
+		height: 10vw;
+		max-height: 10rem;
+		flex-grow: 0;
+		&:nth-of-type(2) {
+			justify-content: flex-start;
+		}
+	}
+	&__card {
+		width: 42rem;
+		height: 26rem;
+		border: 2px solid $main-color;
+		padding: 2rem;
+		margin: 0 auto;
+		border-radius: 10px;
+		text-align: center;
+		line-height: 148%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		p + p {
+			margin-top: 2rem;
+		}
+	}
+}
+
+.contact-icon {
+	fill: $main-shade;
+	width: 9rem;
+	// min-width: 7rem;
+	padding: 2rem;
+}

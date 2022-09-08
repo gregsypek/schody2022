@@ -1,0 +1,22 @@
+.stairs {
+  span {
+    color: $second-color;
+  }
+  &__img {
+    height: 48rem;
+    object-fit: cover;
+    display: block;
+  }
+  &__btn {
+    margin-top: 9.6rem;
+    display: flex;
+    justify-content: right;
+  }
+  // .btn {
+  // 	// margin-left: 75%;
+  // 	display: block;
+  // 	width: 13rem;
+  // 	margin-left: auto;
+  // 	margin-right: 2.4rem;
+  // }
+}

@@ -1,0 +1,18 @@
+extends accountBase
+
+block form
+  h2.form__title Usuń zdjęcia
+    
+    form.form.form__deletePhotos
+      .form__group 
+        label.form__label(for='deletePhotos') Wybierz kategorię
+        select.form__input(id='deletePhotos' name="deletePhotos")
+          each item,i in stairs 
+            optgroup.form__input(label=`${item.name}` value=`${item.name}` data-id=`${item.id}`  id='category')
+              each photo, i in item.images
+                option(data-nr=`${i+1}` data-name=`${photo}` class=`${item.slug}`)= `wzór nr ${i+1}`
+         
+      .form__group 
+        button.btn.account__btn.btn--delete-photo(type='submit') Usuń zdjęcie
+
+    

@@ -1,0 +1,11 @@
+node_modules
+.cache/
+dist/
+<<<<<<< HEAD
+*.env
+=======
+config.env
+>>>>>>> backend
+.DS_Store
+coverage/
+

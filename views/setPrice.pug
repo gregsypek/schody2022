@@ -1,0 +1,35 @@
+extends accountBase
+
+block form
+  h2.form__title Utwórz nowy cennik
+  form.form.form__price
+    .form__group 
+      label.form__label(for='title') Tytuł
+      input.form__input(id='title' type='text'  required name='title')
+    .form__group 
+      label.form__label(for='price') Cena
+      input.form__input(type='number' id='price'  required name='price') 
+    .form__group 
+      label.form__label(for='priceIncluded') Cena obejmuje:
+      input.form__input(type='text' id='priceIncluded'  required name='priceIncluded' value='pomiar wycenę, montaz' )
+    .form__group 
+      label.form__label(for='additionals') Opcje dodatkowe
+      input.form__input(type='text' id='additionals'  required name='additionals' value='oświetlenie ledowe' )
+    .form__group.form__price--imageCover      
+      input.form__upload(type='file', accept='image/*', id='imageCover', name='imageCover')
+      label(for='imageCover') Wybierz zdjęcie
+    
+    .form__group 
+      button.btn.account__btn.btn--set-price(type='submit') Dodaj cennik
+block form2 
+  .container--big.mt--bg   
+    h2.form__title Usuń cennik
+    form.form.form__deletePrice
+      .form__group 
+        label.form__label(for='priceSelect') Wybierz kategorię
+        select.form__input(id='type' name="type" required)
+          option(value="") Wybierz opcje
+            each item in price
+              option(value=`${item.title}` data-id=`${item.id}`)= item.title
+      .form__group 
+        button.btn.account__btn.btn--delete-price(type='submit') Usuń cennik

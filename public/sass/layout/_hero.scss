@@ -1,0 +1,35 @@
+.section-hero {
+	.hero {
+		padding: 0 4.8vw;
+		max-width: 120rem;
+		display: grid;
+		gap: 4.8rem;
+		margin: 0 auto;
+		grid-template-columns: 1fr 1fr;
+
+		@media (max-width: 44em) {
+			padding: 0 9.6vw;
+			grid-template-columns: 1fr;
+		}
+
+		&__text-box {
+			@media (max-width: 44em) {
+				// padding: 0 8vw;
+				// grid-template-columns: 1fr;
+				max-width: 60vw;
+			}
+			span {
+				color: #a17e75;
+			}
+		}
+		&__img-box {
+			@media (max-width: 44em) {
+				justify-self: center;
+			}
+		}
+
+		&__img {
+			width: 100%;
+		}
+	}
+}

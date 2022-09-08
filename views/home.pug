@@ -1,0 +1,79 @@
+extends base 
+
+//- block append head
+//-   script(defer src="/js/sticky-nav.js")
+
+block content 
+
+  main 
+    section#hero.section-hero.padding--verticall
+      div.hero.container
+        div.hero__text-box.mb--md 
+          h1.heading-primary.mb--bg Robimy <span>schody,</span> które wyglądają świetnie i zachwycają jakością.
+          a(href="#about" class="btn btn--full") Więcej
+        .hero__img-box 
+          picture 
+            source(srcset="images/hero.webp" type="image/webp")
+            source(srcset="images/hero.png" type="image/png")
+            img(src="images/hero.png"
+              alt="Schody drewniane na betonie, Kolejne schody jako przykładowa praca"
+              class="hero__img"
+              width="40vw"
+              height="auto")
+    section#quality.quality 
+      .container.padding--big 
+        .top 
+          h2.heading-secondary Wybierz <span>jakość</span>
+          h3.quality__description.description Jako zgrany zespół specjalistów wykonujemy usługi stolarskie na najwyższym poziomie. Uważamy że każdy detal powinien być	dopracowany. Oto co nas wyróżnia i sprawia że klienci są zadowoleni	i chętnie nas polecają.
+        .quality__bottom  
+          .quality__cards 
+            .quality__card 
+              svg(class="card-icon"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32")
+                title circle-down 
+                path(d="M32 16c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zM3 16c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13z")
+                path(d="M9.914 11.086l-2.829 2.829 8.914 8.914 8.914-8.914-2.828-2.828-6.086 6.086z")
+              p.quality__card-description Profesjonalne podejście do każdego klienta
+            .quality__card 
+              svg(class="card-icon"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32")
+                title calendar 
+                path(d="M10 12h4v4h-4zM16 12h4v4h-4zM22 12h4v4h-4zM4 24h4v4h-4zM10 24h4v4h-4zM16 24h4v4h-4zM10 18h4v4h-4zM16 18h4v4h-4zM22 18h4v4h-4zM4 18h4v4h-4zM26 0v2h-4v-2h-14v2h-4v-2h-4v32h30v-32h-4zM28 30h-26v-22h26v22z")
+              p.quality__card-description Szybki czas realizacji  		
+            .quality__card 
+              svg(class="card-icon"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32")
+                title trophy 
+                path(d="M26 6v-4h-20v4h-6v4c0 3.314 2.686 6 6 6 0.627 0 1.232-0.096 1.801-0.275 1.443 2.063 3.644 3.556 6.199 4.075v6.2h-2c-2.209 0-4 1.791-4 4h16c0-2.209-1.791-4-4-4h-2v-6.2c2.555-0.519 4.756-2.012 6.199-4.075 0.568 0.179 1.173 0.275 1.801 0.275 3.314 0 6-2.686 6-6v-4h-6zM6 13.625c-1.999 0-3.625-1.626-3.625-3.625v-2h3.625v2c0 1.256 0.232 2.457 0.655 3.565-0.213 0.039-0.431 0.060-0.655 0.060zM29.625 10c0 1.999-1.626 3.625-3.625 3.625-0.224 0-0.442-0.021-0.655-0.060 0.423-1.107 0.655-2.309 0.655-3.565v-2h3.625v2z")
+              p.quality__card-description Jakość na pierwszym miejscu  		
+            .quality__card 
+              svg(class="card-icon"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32")
+                title heart 
+                path(d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z")
+              p.quality__card-description Pasja poparta doświadczeniem  		
+        .quality__btn 
+          a.btn.btn--quality(href="/overview" ) Nasza oferta
+    section#about.about.padding--big.container 
+      h2.heading-secondary.mb--bg Kim <span>jesteśmy</span>
+      .about__box 
+        .about__description.mb--bg 
+          p.description Nasza firma powstałą w 2011 roku, a więc już ponad 10 lat temu.Specjalizujemy się w produkcji schodów drewnianych głównie na terenach południowej Polski.
+          p.description Wykonujemy kilka par schodów miesięcznie, więc mamy spore doświadczenie w tym co robimy, a nasz niezmienny od lat zespół fachowców jest gwarantem dobrze wykonanej pracy.
+          p.description Do produkcji schodów używamy tylko najwyższej jakości drewna, a na nasze wyróby udzielamy kilkuletniej gwarancji.
+        picture 
+          source(srcset="images/about.webp" type="image/webp")
+          source(srcset="images/about.jpg" type="image/jpg")
+          img(class="about__photo"
+            src="images/about.jpg"
+            alt="Pracownik szlifuje drewno"
+            width="400"
+            height="400")

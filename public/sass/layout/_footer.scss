@@ -1,0 +1,107 @@
+.footer {
+  display: grid;
+  grid-template-areas: 'box address info';
+
+  justify-content: space-around;
+  gap: 4rem;
+  border-top: 2px solid $main-color;
+  padding-top: 4.8rem;
+  @media (max-width: 84em) {
+    margin: 0 3.2rem;
+  }
+
+  @media (max-width: 44em) {
+    grid-template-areas:
+      'address info'
+      'box box';
+    padding: 4.8rem 6.4vw;
+  }
+  &__box {
+    grid-area: box;
+    @media (max-width: 44em) {
+      display: flex;
+      // gap: 20rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    width: 8rem;
+    // transform: translateX(-5px);
+    @media (max-width: 44em) {
+      order: 1;
+    }
+  }
+  &__icons {
+    display: flex;
+    // gap: 2rem;
+    list-style: none;
+    margin: 3.2rem 0 4.8rem 0;
+    @media (max-width: 44em) {
+      // gap: 2.5rem;
+      order: 0;
+      align-self: start;
+      margin: 0 0 6.4rem 0;
+    }
+  }
+  &__copyright {
+    @media (max-width: 44em) {
+      order: 2;
+      flex-basis: 100%;
+    }
+  }
+  &__address {
+    grid-area: address;
+    font-size: 1.6rem;
+    color: $gray-shade;
+    font-style: normal;
+    line-height: 150%;
+    padding: 1rem;
+  }
+  &__heading {
+    font-size: 2rem;
+    color: $gray-shade;
+
+    // margin-bottom: 5rem;
+  }
+  &__nav {
+    grid-area: info;
+    font-size: 2rem;
+    line-height: 150%;
+    @media (max-width: 44em) {
+      justify-self: right;
+    }
+  }
+
+  &__links {
+    color: $gray-shade;
+    font-size: 1.6rem;
+    line-height: 150%;
+    list-style: none;
+  }
+  &__link {
+    transition: all 0.3 ease;
+    padding: 1rem;
+  }
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+  &__link:hover,
+  &__link:active {
+    color: $gray-color;
+
+    outline: 1px solid $main-color;
+  }
+  &--icon {
+    // transition: fill 0.3 ease;
+    fill: $gray-shade;
+    width: 2rem;
+    &:hover {
+      fill: $gray-shade;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+extends base 
+
+block content 
+  section#stairs.stairs
+    - const splitName = stairs.name.split(' ');  
+    - const partOne = splitName.slice(0,splitName.length-1);
+    - const partTwoColored = splitName[splitName.length-1]
+      if splitName.length > 1 
+        h2.heading-secondary.container.padding--big #{partOne.join(' ')} <span>#{partTwoColored}</span>
+      else 
+        h2.heading-secondary.container.padding--big <span>#{splitName[0]}</span>
+      .stairs__top.top 
+        img(class="stairs__img container--big"
+              src=`/images/stairs/${stairs.imageCover}`
+              alt=`${stairs.slug}`)
+        .stairs__info.padding--small.container--big 
+          h3.heading-tertiary Realizacje 
+          p.stairs__invocation.description= stairs.description
+      .stairs__bottom.container.padding--huge 
+        .gallery(id=`${stairs.slug}`.toLowerCase())
+          each img, index in stairs.images
+            figure 
+              img(src=`/images/stairs/${img}` alt=`${stairs.name}` class=`${img.split('.')[0]} lazyload`)
+              figcaption.title= `wzór nr ${index+1}`
+
+        .stairs__btn 
+          a(href="/overview" class="btn btn--empty") Wróć
+      .stairs__description.container--big 
+        .description__aside 
+        p.description= stairs.summary
+          

@@ -1,0 +1,49 @@
+.quality {
+	background-color: $main-color;
+	@include sectionHead($gray-shade);
+
+	&__bottom {
+		margin: 12.8rem 0 9.6rem 0;
+	}
+	&__cards {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		column-gap: 4.8rem;
+		row-gap: 8rem;
+	}
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 19rem;
+		height: 16rem;
+		background-color: $main-shade;
+		font-size: 1.6rem;
+		font-weight: 400;
+		padding: 1rem;
+		margin: 0 auto;
+		border-radius: 10px;
+		p {
+			text-align: center;
+			line-height: 135%;
+		}
+	}
+	&__btn {
+		text-align: left;
+	}
+}
+
+.card-icon {
+	position: absolute;
+
+	width: 5rem;
+
+	top: -25%;
+	left: 50%;
+	transform: translate(-50%, +25%);
+
+	fill: $gray-shade;
+}

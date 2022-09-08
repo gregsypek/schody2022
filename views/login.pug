@@ -1,0 +1,15 @@
+extends base
+
+block content
+  main.padding--big
+    .login-form
+      h3.heading-tertiary Zaloguj się do swojego konta
+      form.form__login
+        .form__group
+          label.form__label(for='email') Email 
+          input#email.form__input(type='email', placeholder='stas@gmail.com', required)
+        .form__group
+          label.form__label(for='password') Hasło
+          input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+        .form__group
+          button.btn.account__btn Zaloguj się

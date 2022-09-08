@@ -1,0 +1,16 @@
+extends base 
+
+block content 
+  main 
+    section#offer.offer.padding--huge.container 
+      .top.mb--bg 
+        h2.heading-secondary Nasza <span>oferta</span>
+        h3.offer__description.description Wykonujemy schody wewnętrzne rożnego rodzaju, głównie dębowe ze            względu na funkcjonalość i trwałość. Realizujemy także zamówiena na balustrady te tradycyjne jak i bardziej nowoczesne. Chętnie doradzamy niezdecydowanym klientom i zaspakajamy oczekiwania pozostałym.  
+      .offer__bottom 
+        .gallery
+          each item in stairs 
+            a.single__image.color(href=`/stairs/${item.slug}`)
+              img(class="color"
+                  src=`images/stairs/${item.imageCover}`
+                  alt=`${item.name}`)
+              p= item.name

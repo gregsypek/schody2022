@@ -1,0 +1,116 @@
+.form {
+  &__title {
+    font-size: 3rem;
+    font-weight: 6900;
+    letter-spacing: 0.05em;
+    margin-bottom: 4.8rem;
+  }
+  &__input {
+    display: block;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    padding: 1.25rem 1.75rem;
+    border: none;
+    width: 100%;
+
+    background-color: $main-shade;
+    // border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Pseudo element (a visible thing that isn't really in the DOM).
+        Also needs -ms- */
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid #55c57a;
+      &:invalid {
+        border-bottom: 3px solid orangered;
+      }
+    }
+    &::-webkit-input-placeholder {
+      color: #bbb;
+    }
+  }
+  &__group:not(:last-child) {
+    // margin-bottom: 2.5rem;
+    margin-right: 5rem;
+    // width: 35rem;
+
+    @media (max-width: 44em) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 3rem 0 1rem 0;
+    color: $second-color;
+    padding: 3px 0;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  button.btn {
+    margin-top: 6.4rem;
+    background-color: $gray-shade;
+    color: $main-shade;
+  }
+
+  //Form UPLOAD
+
+  &__upload {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    &::focus + label {
+      outline: 3px solid $second-color;
+      outline-offset: 3px;
+    }
+    & + label {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin: 3rem 0 1rem 0;
+      color: $second-color;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 3px solid $second-color;
+      padding: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      &:hover {
+        background-color: $main-shade;
+        color: $gray-shade;
+      }
+    }
+  }
+
+  //FORM WITH PASSWORDS
+
+  &__password {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.login-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: $main-color;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  // border-radius: 5px;
+  h3 {
+    padding: 4rem 0;
+    color: $gray-shade;
+    font-weight: 700;
+  }
+}

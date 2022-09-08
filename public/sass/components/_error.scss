@@ -1,0 +1,15 @@
+.error {
+  text-align: center;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10rem 0;
+  }
+  &__msg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 50rem;
+    margin: 10rem auto;
+  }
+}

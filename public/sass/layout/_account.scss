@@ -1,0 +1,84 @@
+.account {
+  @include sectionHead($second-color);
+
+  .top {
+    display: block;
+    span {
+      display: inline-block;
+    }
+    h2 {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10vw;
+    background-color: $main-color;
+
+    &--passwords {
+      justify-content: space-evenly;
+    }
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 44em) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    // margin-left: clamp(2rem, 10%, 12.8rem);
+    margin-left: 8rem;
+    @media (max-width: 44em) {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 2rem 4rem;
+
+    @media (max-width: 44em) {
+      margin-bottom: 2rem;
+    }
+
+    svg {
+      margin-right: 5rem;
+    }
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-family: $font-family;
+      font-weight: 500;
+    }
+    a:hover,
+    a:active {
+      color: $second-color;
+    }
+    &--active {
+      border-right: 3px solid $second-color;
+    }
+  }
+
+  &__btn {
+    margin-top: 5rem;
+    background-color: $gray-shade;
+    color: white;
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
+}

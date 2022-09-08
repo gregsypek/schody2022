@@ -1,0 +1,37 @@
+.about {
+	h2 {
+		padding-bottom: 3.2rem;
+		display: inline-block;
+		border-bottom: 3px solid $second-color;
+	}
+
+	span {
+		color: $second-color;
+	}
+
+	&__box {
+		display: flex;
+		gap: 9.6rem;
+		// margin-bottom: 5rem;
+		@media (max-width: 44em) {
+			flex-direction: column;
+		}
+	}
+
+	&__description {
+		p:not(:last-of-type) {
+			margin-bottom: 4.8rem;
+		}
+		@media (max-width: 44em) {
+			order: 1;
+		}
+	}
+	&__photo {
+		// width: 40vw;
+		max-height: 45rem;
+		object-fit: cover;
+		@media (max-width: 44em) {
+			order: 0;
+		}
+	}
+}

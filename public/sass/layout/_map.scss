@@ -1,0 +1,13 @@
+#map {
+	width: 80vw;
+	height: 50vw;
+	max-width: 800px;
+	max-height: 600px;
+	margin: 12.8rem auto;
+	margin-bottom: 10rem;
+	border: 2px solid $main-color;
+	@media (max-width: 44em) {
+		width: 90vw;
+		height: 70vw;
+	}
+}

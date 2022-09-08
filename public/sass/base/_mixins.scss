@@ -1,0 +1,36 @@
+@mixin sectionHead($color) {
+	.top {
+		display: grid;
+		gap: 4.8rem;
+		align-items: stretch;
+		grid-template-columns: 1fr 2fr;
+
+		@media (max-width: 44em) {
+			grid-template-columns: 1fr;
+			justify-items: left;
+			gap: 6.4rem;
+		}
+		h2 {
+			border-right: 3px solid $color;
+			padding-right: 9.6rem;
+			@media (max-width: 44em) {
+				padding-right: 4.8rem;
+			}
+		}
+
+		h3 {
+			max-width: 55rem;
+		}
+		span {
+			display: block;
+			color: $color;
+		}
+	}
+	.no-flexbox-gap .top {
+		margin-right: 4.8rem;
+
+		@media (max-width: 44em) {
+			margin-bottom: 6.4rem;
+		}
+	}
+}

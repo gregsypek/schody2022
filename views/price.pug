@@ -1,0 +1,52 @@
+extends base 
+
+mixin howCard(title, svgPath, info)
+  .how__card 
+    svg(class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32")
+      title= title 
+      path(d= svgPath) 
+    p.info= info
+
+block content 
+  main 
+    section#price.price 
+      .price__top.top.padding--big.container.mb--md 
+        h2.heading-secondary Nasza oferta <span>cenowa</span>
+        h3.price__description.description Na cenę schodów ma wpływ wiele czynników, dlatego każde schody są wyceniane indywidualnie. Zanim ustalimy dokładną cenę musimy ustalić          gatunek drewna, rodzaj balustrady, rodzaj wykończenia oraz dodatki. Poniżej przedstawiamy przykładowe ceny wyjściowe dla wykonanych schodów.
+      .price__bottom.container--big 
+        each item in price
+          .price__row.row--1
+            .price__col.col--1 
+              .price__box 
+                img(src=`/images/price/${item.imageCover}` alt=`${item.title}` class="price__photo")
+                p.price__title= item.title
+            .price__col.col--2 
+              .price__card 
+                p.price__card-heading Cena netto 
+                .price__card-box 
+                  sup od 
+                  span.price__card-value= item.price
+                  sub zł
+            .price__col.col--3  
+              .price__lists 
+                .price__list 
+                  header Cena obejmuje
+                    ul.price__includes 
+                      each element in item.priceIncluded 
+                        li= element                      
+                .price__list
+                  if item.additionals.length > 0   
+                    header Opcje dodatkowe 
+                      ul.price__addition 
+                        each e in item.additionals 
+                          li= e                
+                      
+    .section.how.container.padding--huge 
+      .bg--center 
+      h2.heading-secondary.padding--small Jak uzyskać wycenę <span>cenową?</span>
+      .how__cards.padding--small         
+        +howCard('phone','M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z','zadzwonić lub wysłać emaila')
+        +howCard('location','M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z','podać lokalizację montażu')
+        +howCard('camera','M9.5 19c0 3.59 2.91 6.5 6.5 6.5s6.5-2.91 6.5-6.5-2.91-6.5-6.5-6.5-6.5 2.91-6.5 6.5zM30 8h-7c-0.5-2-1-4-3-4h-8c-2 0-2.5 2-3 4h-7c-1.1 0-2 0.9-2 2v18c0 1.1 0.9 2 2 2h28c1.1 0 2-0.9 2-2v-18c0-1.1-0.9-2-2-2zM16 27.875c-4.902 0-8.875-3.973-8.875-8.875s3.973-8.875 8.875-8.875c4.902 0 8.875 3.973 8.875 8.875s-3.973 8.875-8.875 8.875zM30 14h-4v-2h4v2z','zrobić kilka zdjęć schodów')
+        +howCard('shrink2','M14 18v13l-5-5-6 6-3-3 6-6-5-5zM32 3l-6 6 5 5h-13v-13l5 5 6-6z','określić wzór balustrady')
+        +howCard('insert-template','M12 6h4v2h-4zM18 6h4v2h-4zM28 6v8h-6v-2h4v-4h-2v-2zM10 12h4v2h-4zM16 12h4v2h-4zM6 8v4h2v2h-4v-8h6v2zM12 18h4v2h-4zM18 18h4v2h-4zM28 18v8h-6v-2h4v-4h-2v-2zM10 24h4v2h-4zM16 24h4v2h-4zM6 20v4h2v2h-4v-8h6v2zM30 2h-28v28h28v-28zM32 0v0 32h-32v-32h32z','przesłać zrzuty architektoniczne')
